@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "author": "LootBox Guard",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad",
+      "top": -48,
+      "left": -270,
+      "attrs": {
+        "columns": "3"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo",
+      "top": 20,
+      "left": 215,
+      "attrs": {}
+    },
+    {
+      "type": "board-mfrc522",
+      "id": "rfid",
+      "top": -150,
+      "left": 185,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "tampa",
+      "top": 145,
+      "left": 150,
+      "attrs": {
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "alarme",
+      "top": 145,
+      "left": 240,
+      "attrs": {
+        "volume": "0.3"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "keypad:R1",
+      "esp:D32",
+      "green",
+      []
+    ],
+    [
+      "keypad:R2",
+      "esp:D33",
+      "blue",
+      []
+    ],
+    [
+      "keypad:R3",
+      "esp:D25",
+      "purple",
+      []
+    ],
+    [
+      "keypad:R4",
+      "esp:D26",
+      "orange",
+      []
+    ],
+    [
+      "keypad:C1",
+      "esp:D27",
+      "gold",
+      []
+    ],
+    [
+      "keypad:C2",
+      "esp:D14",
+      "cyan",
+      []
+    ],
+    [
+      "keypad:C3",
+      "esp:D13",
+      "magenta",
+      []
+    ],
+    [
+      "servo:PWM",
+      "esp:D23",
+      "orange",
+      []
+    ],
+    [
+      "servo:V+",
+      "esp:VIN",
+      "red",
+      []
+    ],
+    [
+      "servo:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "rfid:3.3V",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "rfid:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "rfid:RST",
+      "esp:D22",
+      "gray",
+      []
+    ],
+    [
+      "rfid:SDA",
+      "esp:D5",
+      "purple",
+      []
+    ],
+    [
+      "rfid:SCK",
+      "esp:D18",
+      "yellow",
+      []
+    ],
+    [
+      "rfid:MISO",
+      "esp:D19",
+      "blue",
+      []
+    ],
+    [
+      "rfid:MOSI",
+      "esp:D21",
+      "green",
+      []
+    ],
+    [
+      "tampa:2",
+      "esp:D4",
+      "cyan",
+      []
+    ],
+    [
+      "tampa:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "alarme:2",
+      "esp:RX2",
+      "orange",
+      []
+    ],
+    [
+      "alarme:1",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
