@@ -1,10 +1,10 @@
 # LootBox Guard: RFID e PIN para um baú de recompensas
 
-Em um jogo presencial, uma equipe encontra a recompensa no final de uma missão. O LootBox Guard simula um baú que libera essa recompensa somente quando o jogador apresenta o cartão cadastrado e informa o PIN correto.
+O LootBox Guard é um baú virtual para jogos presenciais. A ideia é guardar a recompensa da missão e liberar a tampa só para quem tem o cartão cadastrado e sabe o PIN.
 
 ## Como o circuito funciona
 
-O ESP32 virtual recebe o UID do cartão pelo leitor MFRC522 e lê o PIN no teclado matricial. Quando as duas verificações passam, o servo libera a trava e o jogador tem cinco segundos para iniciar a abertura. O interruptor deslizante representa a tampa. Ao voltar para a posição fechada, o servo trava o baú novamente.
+O ESP32 virtual recebe o UID do cartão pelo leitor MFRC522 e lê o PIN no teclado matricial. Com o cartão e o PIN corretos, o servo libera a trava e o jogador tem cinco segundos para iniciar a abertura. O interruptor deslizante representa a tampa. Ao voltar para a posição fechada, o servo trava o baú novamente.
 
 Após três PINs incorretos consecutivos, o firmware ignora as tentativas por 30 segundos. O ESP32 continua lendo a tampa nesse período. Se alguém abrir o baú sem autorização, o buzzer toca e o monitor serial registra a violação. Fechar a tampa encerra o alarme.
 
@@ -18,7 +18,7 @@ Após três PINs incorretos consecutivos, o firmware ignora as tentativas por 30
 
 ## Resultados
 
-Verificamos no Wokwi a recusa de PIN sem cartão, de cartão desconhecido e de PIN errado. Também verificamos a abertura autorizada, o travamento no fechamento e o alarme com o teclado bloqueado. O monitor serial registrou o fim do bloqueio.
+Nos testes no Wokwi, o baú recusou PIN sem cartão, cartão desconhecido e PIN errado. Com o cartão e o PIN corretos, a trava abriu e voltou à posição inicial quando fechamos a tampa. O alarme funcionou mesmo com o teclado bloqueado, e o monitor serial registrou o fim da espera.
 
 ## Arquivos
 
