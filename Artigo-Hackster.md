@@ -22,4 +22,4 @@ Verificamos no Wokwi a recusa de PIN sem cartão, de cartão desconhecido e de P
 
 ## Arquivos
 
-O firmware em C++ está em sketch.ino e as conexões em diagram.json. O README contém a tabela de pinos e o roteiro dos testes. Insira aqui o link do repositório GitHub e uma captura do circuito antes da publicação no Hackster.io.
+O firmware em C++ está em sketch.ino e as conexões em diagram.json. O README contém a tabela de pinos e o roteiro dos testes. [Acesse o código e o diagrama no GitHub](https://github.com/antoniotecinf/trabalhoArq1).
