@@ -4,7 +4,9 @@
 
 ## 👥 Integrantes da Equipe
 
-Preencher com nomes completos, e-mails e perfis GitHub da equipe.
+- Antonio Pedro — antonio.olima@upe.br
+- Miguel Costa — miguel.costa@upe.br
+- Ryan Ellesson — ryan.ellesson@upe.br
 
 ## 📖 1. Contexto e História (O Problema)
 
