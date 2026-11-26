@@ -2,32 +2,32 @@
 
 > Projeto prático de IoT e Segurança da Informação desenvolvido na disciplina de Algoritmos e Estrutura de Dados (CESAR School).
 
-## 👥 Integrantes da Equipe
+## Integrantes da Equipe
 
 - Antonio Pedro — antonio.olima@upe.br
 - Miguel Costa — miguel.costa@upe.br
 - Ryan Ellesson — ryan.ellesson@upe.br
 
-## 📖 1. Contexto e História (O Problema)
+## 1. Contexto e História (O Problema)
 
-Em um jogo presencial, um baú guarda a recompensa de uma missão. O protótipo simulado controla quem pode retirar a recompensa e sinaliza se a tampa for aberta sem autorização.
+O LootBox Guard é um baú virtual para jogos presenciais. A ideia é guardar a recompensa da missão e liberar a tampa só para quem tem o cartão cadastrado e sabe o PIN. Se alguém abrir a tampa sem autorização, o buzzer toca.
 
-## ⚙️ 2. Funcionalidades do Dispositivo
+## 2. Funcionalidades do Dispositivo
 
-- [x] Liberação com cartão RFID cadastrado e PIN de quatro dígitos.
-- [x] Bloqueio por 30 segundos após três PINs incorretos consecutivos.
-- [x] Janela de cinco segundos para iniciar a abertura e travamento ao fechar a tampa.
-- [x] Alarme sonoro enquanto a tampa estiver aberta indevidamente, inclusive durante o bloqueio do teclado.
+- Liberação com cartão RFID cadastrado e PIN de quatro dígitos.
+- Bloqueio por 30 segundos após três PINs incorretos consecutivos.
+- Janela de cinco segundos para iniciar a abertura e travamento ao fechar a tampa.
+- Alarme sonoro enquanto a tampa estiver aberta indevidamente, inclusive durante o bloqueio do teclado.
 
 O PIN e o UID cadastrados são dados de demonstração. O firmware compara o identificador do cartão. Os tempos são medidos com millis() no ESP32 virtual.
 
-## 🛠️ 3. Especificações Técnicas e Componentes
+## 3. Especificações Técnicas e Componentes
 
 - ESP32 DevKit v1, teclado matricial 4×3, leitor MFRC522, microservo e buzzer piezoelétrico.
 - Interruptor deslizante simulando o estado da tampa. Esquerda = fechada. Direita = aberta.
 - Wokwi, framework Arduino em C++ e bibliotecas Keypad, ESP32Servo, MFRC522 e SPI.
 
-## 🔌 4. Diagrama de Conexões (Pinout)
+## 4. Diagrama de Conexões (Pinout)
 
 O arquivo diagram.json contém as conexões do circuito simulado.
 
@@ -42,7 +42,7 @@ O arquivo diagram.json contém as conexões do circuito simulado.
 | Buzzer | 2 (+), 1 (−) | GPIO 16 (RX2), GND |
 | Monitor serial | RX | TX0 |
 
-## 🚀 5. Instruções de Compilação e Gravação
+## 5. Instruções de Compilação e Gravação
 
 1. Abra https://wokwi.com/projects/481675741334122497 e clique em Start Simulation. O Wokwi compila o código e inicia o ESP32 virtual.
 2. Clique no MFRC522, selecione Blue Card e clique em TAP. O cartão cadastrado tem UID 01:02:03:04.
